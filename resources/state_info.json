@@ -1,0 +1,254 @@
+{
+  "statesList": [
+    {
+      "state": "ALABAMA",
+      "abbreviation": "AL",
+      "borders": ["FL", "GA", "MS", "TN"]
+    },
+    {
+      "state": "ALASKA",
+      "abbreviation": "AK",
+      "borders": []
+    },
+    {
+      "state": "ARIZONA",
+      "abbreviation": "AZ",
+      "borders": ["CA", "CO", "NM", "NV", "UT"]
+    },
+    {
+      "state": "ARKANSAS",
+      "abbreviation": "AR",
+      "borders": ["LA", "MO", "MS", "OK", "TN", "TX"]
+    },
+    {
+      "state": "CALIFORNIA",
+      "abbreviation": "CA",
+      "borders": ["AZ", "NV", "OR"]
+    },
+    {
+      "state": "COLORADO",
+      "abbreviation": "CO",
+      "borders": ["AZ", "KS", "NE", "NM", "OK", "UT", "WY"]
+    },
+    {
+      "state": "CONNECTICUT",
+      "abbreviation": "CT",
+      "borders": ["MA", "NY", "RI"]
+    },
+    {
+      "state": "DELAWARE",
+      "abbreviation": "DE",
+      "borders": ["MD", "NJ", "PA"]
+    },
+    {
+      "state": "FLORIDA",
+      "abbreviation": "FL",
+      "borders": ["AL", "GA"]
+    },
+    {
+      "state": "GEORGIA",
+      "abbreviation": "GA",
+      "borders": ["AL", "FL", "NC", "SC", "TN"]
+    },
+    {
+      "state": "HAWAII",
+      "abbreviation": "HI",
+      "borders": []
+    },
+    {
+      "state": "IDAHO",
+      "abbreviation": "ID",
+      "borders": ["MT", "NV", "OR", "UT", "WA", "WY"]
+    },
+    {
+      "state": "ILLINOIS",
+      "abbreviation": "IL",
+      "borders": ["IA", "IN", "KY", "MO", "WI"]
+    },
+    {
+      "state": "INDIANA",
+      "abbreviation": "IN",
+      "borders": ["IL", "KY", "MI", "OH"]
+    },
+    {
+      "state": "IOWA",
+      "abbreviation": "IA",
+      "borders": ["MN", "MO", "NE", "SD", "WI", "IL"]
+    },
+    {
+      "state": "KANSAS",
+      "abbreviation": "KS",
+      "borders": ["CO", "MO", "NE", "OK"]
+    },
+    {
+      "state": "KENTUCKY",
+      "abbreviation": "KY",
+      "borders": ["IL", "IN", "MO", "OH", "TN", "VA", "WV"]
+    },
+    {
+      "state": "LOUISIANA",
+      "abbreviation": "LA",
+      "borders": ["AR", "MS", "TX"]
+    },
+    {
+      "state": "MAINE",
+      "abbreviation": "ME",
+      "borders": ["NH"]
+    },
+    {
+      "state": "MARYLAND",
+      "abbreviation": "MD",
+      "borders": ["DE", "PA", "VA", "WV"]
+    },
+    {
+      "state": "MASSACHUSETTS",
+      "abbreviation": "MA",
+      "borders": ["CT", "NH", "NY", "RI", "VT"]
+    },
+    {
+      "state": "MICHIGAN",
+      "abbreviation": "MI",
+      "borders": ["IN", "OH", "WI"]
+    },
+    {
+      "state": "MINNESOTA",
+      "abbreviation": "MN",
+      "borders": ["IA", "ND", "SD", "WI"]
+    },
+    {
+      "state": "MISSISSIPPI",
+      "abbreviation": "MS",
+      "borders": ["AL", "AR", "LA", "TN"]
+    },
+    {
+      "state": "MISSOURI",
+      "abbreviation": "MO",
+      "borders": ["AR", "IA", "IL", "KS", "KY", "NE", "OK", "TN"]
+    },
+    {
+      "state": "MONTANA",
+      "abbreviation": "MT",
+      "borders": ["ID", "ND", "SD", "WY"]
+    },
+    {
+      "state": "NEBRASKA",
+      "abbreviation": "NE",
+      "borders": ["CO", "IA", "KS", "MO", "SD", "WY"]
+    },
+    {
+      "state": "NEVADA",
+      "abbreviation": "NV",
+      "borders": ["AZ", "CA", "ID", "OR", "UT"]
+    },
+    {
+      "state": "NEW HAMPSHIRE",
+      "abbreviation": "NH",
+      "borders": ["MA", "ME", "VT"]
+    },
+    {
+      "state": "NEW JERSEY",
+      "abbreviation": "NJ",
+      "borders": ["DE", "NY", "PA"]
+    },
+    {
+      "state": "NEW MEXICO",
+      "abbreviation": "NM",
+      "borders": ["AZ", "CO", "OK", "TX", "UT"]
+    },
+    {
+      "state": "NEW YORK",
+      "abbreviation": "NY",
+      "borders": ["CT", "MA", "NJ", "PA", "VT"]
+    },
+    {
+      "state": "NORTH CAROLINA",
+      "abbreviation": "NC",
+      "borders": ["GA", "SC", "TN", "VA"]
+    },
+    {
+      "state": "NORTH DAKOTA",
+      "abbreviation": "ND",
+      "borders": ["MN", "MT", "SD"]
+    },
+    {
+      "state": "OHIO",
+      "abbreviation": "OH",
+      "borders": ["AZ", "CO", "OK", "TX", "UT"]
+    },
+    {
+      "state": "OKLAHOMA",
+      "abbreviation": "OK",
+      "borders": ["AR", "CO", "KS", "MO", "NM", "TX"]
+    },
+    {
+      "state": "OREGON",
+      "abbreviation": "OR",
+      "borders": ["CA", "ID", "NV", "WA"]
+    },
+    {
+      "state": "PENNSYLVANIA",
+      "abbreviation": "PA",
+      "borders": ["DE", "MD", "NJ", "NY", "OH", "WV"]
+    },
+    {
+      "state": "RHODE ISLAND",
+      "abbreviation": "RI",
+      "borders": ["CT", "MA"]
+    },
+    {
+      "state": "SOUTH CAROLINA",
+      "abbreviation": "SC",
+      "borders": ["GA", "NC"]
+    },
+    {
+      "state": "SOUTH DAKOTA",
+      "abbreviation": "SD",
+      "borders": ["IA", "MN", "MT", "ND", "NE", "WY"]
+    },
+    {
+      "state": "TENNESSEE",
+      "abbreviation": "TN",
+      "borders": ["AL", "AR", "GA", "KY", "MO", "MS", "NC", "VA"]
+    },
+    {
+      "state": "TEXAS",
+      "abbreviation": "TX",
+      "borders": ["AR", "LA", "NM", "OK"]
+    },
+    {
+      "state": "UTAH",
+      "abbreviation": "UT",
+      "borders": ["AZ", "CO", "ID", "NM", "NV", "WY"]
+    },
+    {
+      "state": "VERMONT",
+      "abbreviation": "VT",
+      "borders": ["MA", "NH", "NY"]
+    },
+    {
+      "state": "VIRGINIA",
+      "abbreviation": "VA",
+      "borders": ["KY", "MD", "NC", "TN", "WV"]
+    },
+    {
+      "state": "WASHINGTON",
+      "abbreviation": "WA",
+      "borders": ["ID", "OR"]
+    },
+    {
+      "state": "WEST VIRGINIA",
+      "abbreviation": "WV",
+      "borders": ["KY", "MD", "OH", "PA", "VA"]
+    },
+    {
+      "state": "WISCONSIN",
+      "abbreviation": "WI",
+      "borders": ["IA", "IL", "MI", "MN"]
+    },
+    {
+      "state": "WYOMING",
+      "abbreviation": "WY",
+      "borders": ["CO", "ID", "MT", "NE", "SD", "UT"]
+    }
+  ]
+}
