@@ -3,28 +3,27 @@
 #include <cinder/app/App.h>
 #include <cinder/app/RendererGl.h>
 
-#include "my_app.h"
-
+#include "state_app.h"
 
 using cinder::app::App;
 using cinder::app::RendererGl;
 
 
-namespace myapp {
+namespace stateapp {
 
 const int kSamples = 8;
-const int kWidth = 800;
-const int kHeight = 800;
+const int kWidth = 985;
+const int kHeight = 670;
 
 void SetUp(App::Settings* settings) {
   settings->setWindowSize(kWidth, kHeight);
-  settings->setTitle("My CS 126 Application");
+  settings->setTitle("CS 126 Final Project: State Paths");
 }
 
-}  // namespace myapp
+}  // namespace stateapp
 
 
 // This is a macro that runs the application.
-CINDER_APP(myapp::MyApp,
-           RendererGl(RendererGl::Options().msaa(myapp::kSamples)),
-           myapp::SetUp)
+CINDER_APP(stateapp::StateApp,
+           RendererGl(RendererGl::Options().msaa(stateapp::kSamples)),
+           stateapp::SetUp)
