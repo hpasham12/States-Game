@@ -12,4 +12,14 @@ Development
 - **4/23/20** 
    - Downloaded an image of a map from Google Images
    - Used the Image library from cinder to display the image
-     - Future: Figure out how to ask for input
+     - Future: Figure out how to ask for input and get logic to work
+     
+- **4/29/20** 
+   - Tried std::cin and cinder/TextBox for user input
+   - Updated JSON file to include list that maps state to index
+   
+- **4/30/20** 
+   - PrintText() to display text in window
+   - Worked on game logic
+   - Created helper functions to read input
+     - Future: User input and show start/ending states on window

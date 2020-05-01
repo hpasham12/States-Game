@@ -24,7 +24,14 @@ class StateApp : public cinder::app::App {
 
  private:
   json json_obj;
+  std::string start_state;
+  std::string end_state;
 
+  void ReadInput(std::string& state);
+  int FindStateNum(std::string& basicString);
+  bool CheckBordering(int start_num, int state_num);
+  void DisplayStates(std::string starting, std::string ending);
+  bool StringCompare(std::string& str1, std::string str2);
 };
 
 }  // namespace stateapp
