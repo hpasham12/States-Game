@@ -23,11 +23,11 @@ using cinder::TextBox;
 using cinder::ColorA;
 
 const char kNormalFont[] = "Arial";
+const std::string WHITESPACE = " \n\r\t\f\v";
 
 StateApp::StateApp() {
   std::ifstream file("C:/Users/hpash/cinder_0.9.2_vc2015/my-projects/final-project-hpasham12/resources/state_info.json");
   file >> json_obj;
-  std::cout << json_obj["statesList"].at(0)["state"] << std::endl;
   int start_number = 1; //alaska
   int end_number = 10; //hawaii
   srand((unsigned) time(0));
@@ -48,10 +48,6 @@ StateApp::StateApp() {
 void StateApp::setup() {
   cinder::gl::enableDepthWrite();
   cinder::gl::enableDepthRead();
-
-  CI_LOG_E( "Cinder Log test" );
-  std::cout << "cout test" << std::endl;
-  console() << "console test";
 
   auto img = loadImage( loadAsset( "map.png" ) );
   mTex = cinder::gl::Texture2d::create( img );
@@ -80,16 +76,15 @@ void PrintText(const std::string& text, const C& color, const cinder::ivec2& siz
 
 void StateApp::update() {
   if (state_ == GameState::kNewStateEntered) {
+    mUserState = TrimString(mUserState);
     ReadInput(mUserState);
   }
-//  if (state_ == GameState::kPlaying) {
-//    PrintUserState();
-//  }
 }
 
 void StateApp::draw() {
   cinder::gl::enableAlphaBlending();
   cinder::gl::clear();
+  cinder::gl::draw( mTex );
   PrintStates(start_state, end_state);
 
   if (state_ == GameState::kPlaying) {
@@ -104,8 +99,6 @@ void StateApp::draw() {
   if (state_ == GameState::kGameOver) {
     PrintText("WOOHOO YOU WON! NICE JOB!", cinder::Color(0, 0, 1), {500, 50}, {600, 850});
   }
-
-  cinder::gl::draw( mTex );
 }
 
 void StateApp::keyDown(KeyEvent event) {
@@ -116,7 +109,9 @@ void StateApp::keyDown(KeyEvent event) {
   }
 
   if (event.getCode() == KeyEvent::KEY_BACKSPACE) {
-    mUserState.pop_back();
+    if (!mUserState.empty()) {
+      mUserState.pop_back();
+    }
   } else if ((event.getCode() >= KeyEvent::KEY_a && event.getCode() <= KeyEvent::KEY_z) || event.getCode() == KeyEvent::KEY_SPACE) {
     mUserState = mUserState + event.getChar();
   }
@@ -189,6 +184,25 @@ void StateApp::PrintStates(std::string starting, std::string ending) {
 
 void StateApp::PrintUserState() {
   PrintText(mUserState, cinder::Color::white(), {500, 50}, {600, 850});
+}
+
+//trim whitespace from https://www.techiedelight.com/trim-string-cpp-remove-leading-trailing-spaces/
+std::string StateApp::TrimString(std::string& to_trim) {
+  return rtrim(ltrim(to_trim));
+}
+
+//trim whitespace from https://www.techiedelight.com/trim-string-cpp-remove-leading-trailing-spaces/
+std::string StateApp::ltrim(std::string to_trim) {
+  size_t start = to_trim.find_first_not_of(WHITESPACE);
+
+  return (start == std::string::npos) ? "" : to_trim.substr(start);
+}
+
+//trim whitespace from https://www.techiedelight.com/trim-string-cpp-remove-leading-trailing-spaces/
+std::string StateApp::rtrim(std::string to_trim) {
+  size_t end = to_trim.find_last_not_of(WHITESPACE);
+
+  return (end == std::string::npos) ? "" : to_trim.substr(0, end + 1);
 }
 
 }  // namespace stateapp
