@@ -10,6 +10,15 @@
 
 namespace stateapp {
 
+enum class GameState {
+  kStartState,
+  kNewStateEntered,
+  kPlaying,
+  kInvalidState,
+  kInvalidBorder,
+  kGameOver,
+};
+
 using json = nlohmann::json;
 
 class StateApp : public cinder::app::App {
@@ -26,12 +35,16 @@ class StateApp : public cinder::app::App {
   json json_obj;
   std::string start_state;
   std::string end_state;
+  GameState state_;
+  std::string mUserState = "";
 
   void ReadInput(std::string& state);
   int FindStateNum(std::string& basicString);
   bool CheckBordering(int start_num, int state_num);
   void DisplayStates(std::string starting, std::string ending);
-  bool StringCompare(std::string& str1, std::string str2);
+  static bool StringCompare(std::string& str1, std::string str2);
+  static void PrintStates(std::string starting, std::string ending);
+  void PrintUserState();
 };
 
 }  // namespace stateapp

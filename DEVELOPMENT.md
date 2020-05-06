@@ -21,5 +21,6 @@ Development
 - **4/30/20** 
    - PrintText() to display text in window
    - Worked on game logic
+     - Functional on its on without user input
    - Created helper functions to read input
-     - Future: User input and show start/ending states on window
+     - Future: User input & show start/ending states in console or window
