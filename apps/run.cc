@@ -13,7 +13,7 @@ namespace stateapp {
 
 const int kSamples = 8;
 const int kWidth = 985;
-const int kHeight = 670 + 250;
+const int kHeight = 670 + 450;
 
 void SetUp(App::Settings* settings) {
   settings->setWindowSize(kWidth, kHeight);
