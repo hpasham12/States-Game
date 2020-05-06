@@ -1,9 +1,14 @@
 {
   "statesList": [
     {
-    "state": "ALABAMA",
-    "abbreviation": "AL",
-    "borders": ["FL", "GA", "MS", "TN"]
+      "state": "ALABAMA",
+      "abbreviation": "AL",
+      "borders": [
+        "FL",
+        "GA",
+        "MS",
+        "TN"
+      ]
     },
     {
       "state": "ALASKA",
@@ -13,42 +18,84 @@
     {
       "state": "ARIZONA",
       "abbreviation": "AZ",
-      "borders": ["CA", "CO", "NM", "NV", "UT"]
+      "borders": [
+        "CA",
+        "CO",
+        "NM",
+        "NV",
+        "UT"
+      ]
     },
     {
       "state": "ARKANSAS",
       "abbreviation": "AR",
-      "borders": ["LA", "MO", "MS", "OK", "TN", "TX"]
+      "borders": [
+        "LA",
+        "MO",
+        "MS",
+        "OK",
+        "TN",
+        "TX"
+      ]
     },
     {
       "state": "CALIFORNIA",
       "abbreviation": "CA",
-      "borders": ["AZ", "NV", "OR"]
+      "borders": [
+        "AZ",
+        "NV",
+        "OR"
+      ]
     },
     {
       "state": "COLORADO",
       "abbreviation": "CO",
-      "borders": ["AZ", "KS", "NE", "NM", "OK", "UT", "WY"]
+      "borders": [
+        "AZ",
+        "KS",
+        "NE",
+        "NM",
+        "OK",
+        "UT",
+        "WY"
+      ]
     },
     {
       "state": "CONNECTICUT",
       "abbreviation": "CT",
-      "borders": ["MA", "NY", "RI"]
+      "borders": [
+        "MA",
+        "NY",
+        "RI"
+      ]
     },
     {
       "state": "DELAWARE",
       "abbreviation": "DE",
-      "borders": ["MD", "NJ", "PA"]
+      "borders": [
+        "MD",
+        "NJ",
+        "PA"
+      ]
     },
     {
       "state": "FLORIDA",
       "abbreviation": "FL",
-      "borders": ["AL", "GA"]
+      "borders": [
+        "AL",
+        "GA"
+      ]
     },
     {
       "state": "GEORGIA",
       "abbreviation": "GA",
-      "borders": ["AL", "FL", "NC", "SC", "TN"]
+      "borders": [
+        "AL",
+        "FL",
+        "NC",
+        "SC",
+        "TN"
+      ]
     },
     {
       "state": "HAWAII",
@@ -58,349 +105,462 @@
     {
       "state": "IDAHO",
       "abbreviation": "ID",
-      "borders": ["MT", "NV", "OR", "UT", "WA", "WY"]
+      "borders": [
+        "MT",
+        "NV",
+        "OR",
+        "UT",
+        "WA",
+        "WY"
+      ]
     },
     {
       "state": "ILLINOIS",
       "abbreviation": "IL",
-      "borders": ["IA", "IN", "KY", "MO", "WI"]
+      "borders": [
+        "IA",
+        "IN",
+        "KY",
+        "MO",
+        "WI"
+      ]
     },
     {
       "state": "INDIANA",
       "abbreviation": "IN",
-      "borders": ["IL", "KY", "MI", "OH"]
+      "borders": [
+        "IL",
+        "KY",
+        "MI",
+        "OH"
+      ]
     },
     {
       "state": "IOWA",
       "abbreviation": "IA",
-      "borders": ["MN", "MO", "NE", "SD", "WI", "IL"]
+      "borders": [
+        "MN",
+        "MO",
+        "NE",
+        "SD",
+        "WI",
+        "IL"
+      ]
     },
     {
       "state": "KANSAS",
       "abbreviation": "KS",
-      "borders": ["CO", "MO", "NE", "OK"]
+      "borders": [
+        "CO",
+        "MO",
+        "NE",
+        "OK"
+      ]
     },
     {
       "state": "KENTUCKY",
       "abbreviation": "KY",
-      "borders": ["IL", "IN", "MO", "OH", "TN", "VA", "WV"]
+      "borders": [
+        "IL",
+        "IN",
+        "MO",
+        "OH",
+        "TN",
+        "VA",
+        "WV"
+      ]
     },
     {
       "state": "LOUISIANA",
       "abbreviation": "LA",
-      "borders": ["AR", "MS", "TX"]
+      "borders": [
+        "AR",
+        "MS",
+        "TX"
+      ]
     },
     {
       "state": "MAINE",
       "abbreviation": "ME",
-      "borders": ["NH"]
+      "borders": [
+        "NH"
+      ]
     },
     {
       "state": "MARYLAND",
       "abbreviation": "MD",
-      "borders": ["DE", "PA", "VA", "WV"]
+      "borders": [
+        "DE",
+        "PA",
+        "VA",
+        "WV"
+      ]
     },
     {
       "state": "MASSACHUSETTS",
       "abbreviation": "MA",
-      "borders": ["CT", "NH", "NY", "RI", "VT"]
+      "borders": [
+        "CT",
+        "NH",
+        "NY",
+        "RI",
+        "VT"
+      ]
     },
     {
       "state": "MICHIGAN",
       "abbreviation": "MI",
-      "borders": ["IN", "OH", "WI"]
+      "borders": [
+        "IN",
+        "OH",
+        "WI"
+      ]
     },
     {
       "state": "MINNESOTA",
       "abbreviation": "MN",
-      "borders": ["IA", "ND", "SD", "WI"]
+      "borders": [
+        "IA",
+        "ND",
+        "SD",
+        "WI"
+      ]
     },
     {
       "state": "MISSISSIPPI",
       "abbreviation": "MS",
-      "borders": ["AL", "AR", "LA", "TN"]
+      "borders": [
+        "AL",
+        "AR",
+        "LA",
+        "TN"
+      ]
     },
     {
       "state": "MISSOURI",
       "abbreviation": "MO",
-      "borders": ["AR", "IA", "IL", "KS", "KY", "NE", "OK", "TN"]
+      "borders": [
+        "AR",
+        "IA",
+        "IL",
+        "KS",
+        "KY",
+        "NE",
+        "OK",
+        "TN"
+      ]
     },
     {
       "state": "MONTANA",
       "abbreviation": "MT",
-      "borders": ["ID", "ND", "SD", "WY"]
+      "borders": [
+        "ID",
+        "ND",
+        "SD",
+        "WY"
+      ]
     },
     {
       "state": "NEBRASKA",
       "abbreviation": "NE",
-      "borders": ["CO", "IA", "KS", "MO", "SD", "WY"]
+      "borders": [
+        "CO",
+        "IA",
+        "KS",
+        "MO",
+        "SD",
+        "WY"
+      ]
     },
     {
       "state": "NEVADA",
       "abbreviation": "NV",
-      "borders": ["AZ", "CA", "ID", "OR", "UT"]
+      "borders": [
+        "AZ",
+        "CA",
+        "ID",
+        "OR",
+        "UT"
+      ]
     },
     {
       "state": "NEW HAMPSHIRE",
       "abbreviation": "NH",
-      "borders": ["MA", "ME", "VT"]
+      "borders": [
+        "MA",
+        "ME",
+        "VT"
+      ]
     },
     {
       "state": "NEW JERSEY",
       "abbreviation": "NJ",
-      "borders": ["DE", "NY", "PA"]
+      "borders": [
+        "DE",
+        "NY",
+        "PA"
+      ]
     },
     {
       "state": "NEW MEXICO",
       "abbreviation": "NM",
-      "borders": ["AZ", "CO", "OK", "TX", "UT"]
+      "borders": [
+        "AZ",
+        "CO",
+        "OK",
+        "TX",
+        "UT"
+      ]
     },
     {
       "state": "NEW YORK",
       "abbreviation": "NY",
-      "borders": ["CT", "MA", "NJ", "PA", "VT"]
+      "borders": [
+        "CT",
+        "MA",
+        "NJ",
+        "PA",
+        "VT"
+      ]
     },
     {
       "state": "NORTH CAROLINA",
       "abbreviation": "NC",
-      "borders": ["GA", "SC", "TN", "VA"]
+      "borders": [
+        "GA",
+        "SC",
+        "TN",
+        "VA"
+      ]
     },
     {
       "state": "NORTH DAKOTA",
       "abbreviation": "ND",
-      "borders": ["MN", "MT", "SD"]
+      "borders": [
+        "MN",
+        "MT",
+        "SD"
+      ]
     },
     {
       "state": "OHIO",
       "abbreviation": "OH",
-      "borders": ["AZ", "CO", "OK", "TX", "UT"]
+      "borders": [
+        "IN",
+        "KY",
+        "MI",
+        "PA",
+        "WV"
+      ]
     },
     {
       "state": "OKLAHOMA",
       "abbreviation": "OK",
-      "borders": ["AR", "CO", "KS", "MO", "NM", "TX"]
+      "borders": [
+        "AR",
+        "CO",
+        "KS",
+        "MO",
+        "NM",
+        "TX"
+      ]
     },
     {
       "state": "OREGON",
       "abbreviation": "OR",
-      "borders": ["CA", "ID", "NV", "WA"]
+      "borders": [
+        "CA",
+        "ID",
+        "NV",
+        "WA"
+      ]
     },
     {
       "state": "PENNSYLVANIA",
       "abbreviation": "PA",
-      "borders": ["DE", "MD", "NJ", "NY", "OH", "WV"]
+      "borders": [
+        "DE",
+        "MD",
+        "NJ",
+        "NY",
+        "OH",
+        "WV"
+      ]
     },
     {
       "state": "RHODE ISLAND",
       "abbreviation": "RI",
-      "borders": ["CT", "MA"]
+      "borders": [
+        "CT",
+        "MA"
+      ]
     },
     {
       "state": "SOUTH CAROLINA",
       "abbreviation": "SC",
-      "borders": ["GA", "NC"]
+      "borders": [
+        "GA",
+        "NC"
+      ]
     },
     {
       "state": "SOUTH DAKOTA",
       "abbreviation": "SD",
-      "borders": ["IA", "MN", "MT", "ND", "NE", "WY"]
+      "borders": [
+        "IA",
+        "MN",
+        "MT",
+        "ND",
+        "NE",
+        "WY"
+      ]
     },
     {
       "state": "TENNESSEE",
       "abbreviation": "TN",
-      "borders": ["AL", "AR", "GA", "KY", "MO", "MS", "NC", "VA"]
+      "borders": [
+        "AL",
+        "AR",
+        "GA",
+        "KY",
+        "MO",
+        "MS",
+        "NC",
+        "VA"
+      ]
     },
     {
       "state": "TEXAS",
       "abbreviation": "TX",
-      "borders": ["AR", "LA", "NM", "OK"]
+      "borders": [
+        "AR",
+        "LA",
+        "NM",
+        "OK"
+      ]
     },
     {
       "state": "UTAH",
       "abbreviation": "UT",
-      "borders": ["AZ", "CO", "ID", "NM", "NV", "WY"]
+      "borders": [
+        "AZ",
+        "CO",
+        "ID",
+        "NM",
+        "NV",
+        "WY"
+      ]
     },
     {
       "state": "VERMONT",
       "abbreviation": "VT",
-      "borders": ["MA", "NH", "NY"]
+      "borders": [
+        "MA",
+        "NH",
+        "NY"
+      ]
     },
     {
       "state": "VIRGINIA",
       "abbreviation": "VA",
-      "borders": ["KY", "MD", "NC", "TN", "WV"]
+      "borders": [
+        "KY",
+        "MD",
+        "NC",
+        "TN",
+        "WV"
+      ]
     },
     {
       "state": "WASHINGTON",
       "abbreviation": "WA",
-      "borders": ["ID", "OR"]
+      "borders": [
+        "ID",
+        "OR"
+      ]
     },
     {
       "state": "WEST VIRGINIA",
       "abbreviation": "WV",
-      "borders": ["KY", "MD", "OH", "PA", "VA"]
+      "borders": [
+        "KY",
+        "MD",
+        "OH",
+        "PA",
+        "VA"
+      ]
     },
     {
       "state": "WISCONSIN",
       "abbreviation": "WI",
-      "borders": ["IA", "IL", "MI", "MN"]
+      "borders": [
+        "IA",
+        "IL",
+        "MI",
+        "MN"
+      ]
     },
     {
       "state": "WYOMING",
       "abbreviation": "WY",
-      "borders": ["CO", "ID", "MT", "NE", "SD", "UT"]
+      "borders": [
+        "CO",
+        "ID",
+        "MT",
+        "NE",
+        "SD",
+        "UT"
+      ]
     }
   ],
-  "stateToNumber": [
-    {
-      "ALABAMA" : 0
-    },
-    {
-      "ALASKA" : 1
-    },
-    {
-      "ARIZONA" : 2
-    },
-    {
-      "ARKANSAS" : 3
-    },
-    {
-      "CALIFORNIA" : 4
-    },
-    {
-      "COLORADO" : 5
-    },
-    {
-      "CONNECTICUT" : 6
-    },
-    {
-      "DELAWARE" : 7
-    },
-    {
-      "FLORIDA" : 8
-    },
-    {
-      "GEORGIA" : 9
-    },
-    {
-      "HAWAII" : 10
-    },
-    {
-      "IDAHO" : 11
-    },
-    {
-      "ILLINOIS" : 12
-    },
-    {
-      "INDIANA" : 13
-    },
-    {
-      "IOWA" : 14
-    },
-    {
-      "KANSAS" : 15
-    },
-    {
-      "KENTUCKY" : 16
-    },
-    {
-      "LOUISIANA" : 17
-    },
-    {
-      "MAINE" : 18
-    },
-    {
-      "MARYLAND" : 19
-    },
-    {
-      "MASSACHUSETTS" : 20
-    },
-    {
-      "MICHIGAN" : 21
-    },
-    {
-      "MINNESOTA" : 22
-    },
-    {
-      "MISSISSIPPI" : 23
-    },
-    {
-      "MISSOURI" : 24
-    },
-    {
-      "MONTANA" : 25
-    },
-    {
-      "NEBRASKA" : 26
-    },
-    {
-      "NEVADA" : 27
-    },
-    {
-      "NEW HAMPSHIRE" : 28
-    },
-    {
-      "NEW JERSEY" : 29
-    },
-    {
-      "NEW MEXICO" : 30
-    },
-    {
-      "NEW YORK" : 31
-    },
-    {
-      "NORTH CAROLINA" : 32
-    },
-    {
-      "NORTH DAKOTA" : 33
-    },
-    {
-      "OHIO" : 34
-    },
-    {
-      "OKLAHOMA" : 35
-    },
-    {
-      "OREGON" : 36
-    },
-    {
-      "PENNSYLVANIA" : 37
-    },
-    {
-      "RHODE ISLAND" : 38
-    },
-    {
-      "SOUTH CAROLINA" : 39
-    },
-    {
-      "SOUTH DAKOTA" : 40
-    },
-    {
-      "TENNESSEE" : 41
-    },
-    {
-      "TEXAS" : 42
-    },
-    {
-      "UTAH" : 43
-    },
-    {
-      "VERMONT" : 44
-    },
-    {
-      "VIRGINIA" : 45
-    },
-    {
-      "WASHINGTON" : 46
-    },
-    {
-      "WEST VIRGINIA" : 47
-    },
-    {
-      "WISCONSIN" : 48
-    },
-    {
-      "WYOMING" : 49
-    }
-  ]
+  "ALABAMA": 0,
+  "ALASKA": 1,
+  "ARIZONA": 2,
+  "ARKANSAS": 3,
+  "CALIFORNIA": 4,
+  "COLORADO": 5,
+  "CONNECTICUT": 6,
+  "DELAWARE": 7,
+  "FLORIDA": 8,
+  "GEORGIA": 9,
+  "HAWAII": 10,
+  "IDAHO": 11,
+  "ILLINOIS": 12,
+  "INDIANA": 13,
+  "IOWA": 14,
+  "KANSAS": 15,
+  "KENTUCKY": 16,
+  "LOUISIANA": 17,
+  "MAINE": 18,
+  "MARYLAND": 19,
+  "MASSACHUSETTS": 20,
+  "MICHIGAN": 21,
+  "MINNESOTA": 22,
+  "MISSISSIPPI": 23,
+  "MISSOURI": 24,
+  "MONTANA": 25,
+  "NEBRASKA": 26,
+  "NEVADA": 27,
+  "NEW HAMPSHIRE": 28,
+  "NEW JERSEY": 29,
+  "NEW MEXICO": 30,
+  "NEW YORK": 31,
+  "NORTH CAROLINA": 32,
+  "NORTH DAKOTA": 33,
+  "OHIO": 34,
+  "OKLAHOMA": 35,
+  "OREGON": 36,
+  "PENNSYLVANIA": 37,
+  "RHODE ISLAND": 38,
+  "SOUTH CAROLINA": 39,
+  "SOUTH DAKOTA": 40,
+  "TENNESSEE": 41,
+  "TEXAS": 42,
+  "UTAH": 43,
+  "VERMONT": 44,
+  "VIRGINIA": 45,
+  "WASHINGTON": 46,
+  "WEST VIRGINIA": 47,
+  "WISCONSIN": 48,
+  "WYOMING": 49
 }
