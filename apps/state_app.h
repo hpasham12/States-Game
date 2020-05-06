@@ -36,13 +36,13 @@ class StateApp : public cinder::app::App {
   std::string start_state;
   std::string end_state;
   GameState state_;
-  std::string mUserState = "";
+  std::string user_state = "";
 
   void ReadInput(std::string& state);
   int FindStateNum(std::string& basicString);
   bool CheckBordering(int start_num, int state_num);
   static bool StringCompare(std::string& str1, std::string str2);
-  static void PrintStates(const std::string& starting, const std::string& ending);
+  void PrintStates(const std::string& starting, const std::string& ending);
   void PrintUserState();
   static std::string TrimString(std::string& to_trim);
   static std::string ltrim(const std::string& to_trim);
@@ -50,6 +50,9 @@ class StateApp : public cinder::app::App {
   static bool CheckRestart(std::string input);
   void RestartGame();
   std::vector<std::string> FindStates();
+  template <typename C>
+  void PrintText(const std::string& text, const C& color,
+                 const glm::ivec2& size, const glm::vec2& loc);
 };
 
 }  // namespace stateapp

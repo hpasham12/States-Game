@@ -42,36 +42,16 @@ void StateApp::setup() {
   mTex = cinder::gl::Texture2d::create( img );
 }
 
-//From snake lab
-template <typename C>
-void PrintText(const std::string& text, const C& color, const cinder::ivec2& size,
-               const cinder::vec2& loc) {
-  cinder::gl::color(color);
-
-  auto box = TextBox()
-      .alignment(TextBox::LEFT)
-      .font(cinder::Font(kNormalFont, 30))
-      .size(size)
-      .color(color)
-      .backgroundColor(ColorA(0, 0, 0, 0))
-      .text(text);
-
-  const auto box_size = box.getSize();
-  const cinder::vec2 locp = {loc.x - box_size.x / 2, loc.y - box_size.y / 2};
-  const auto surface = box.render();
-  const auto texture = cinder::gl::Texture::create(surface);
-  cinder::gl::draw(texture, locp);
-}
 
 void StateApp::update() {
   if (state_ == GameState::kNewStateEntered) {
-    mUserState = TrimString(mUserState);
-    if (CheckRestart(mUserState)) {
+    user_state = TrimString(user_state);
+    if (CheckRestart(user_state)) {
       RestartGame();
       state_ = GameState::kPlaying;
-      mUserState = "";
+      user_state.clear();
     } else {
-      ReadInput(mUserState);
+      ReadInput(user_state);
     }
   }
 }
@@ -102,42 +82,61 @@ void StateApp::keyDown(KeyEvent event) {
   } else {
     state_ = GameState::kPlaying;
   }
-
   if (event.getCode() == KeyEvent::KEY_BACKSPACE) {
-    if (!mUserState.empty()) {
-      mUserState.pop_back();
+    if (!user_state.empty()) {
+      user_state.pop_back();
     }
   } else if ((event.getCode() >= KeyEvent::KEY_a && event.getCode() <= KeyEvent::KEY_z) || event.getCode() == KeyEvent::KEY_SPACE) {
-    mUserState = mUserState + event.getChar();
+    user_state += event.getChar();
   }
 }
 
-void StateApp::ReadInput(std::string& statename) {
-  int state_num = FindStateNum(statename);
+//From snake lab
+template <typename C>
+void StateApp::PrintText(const std::string& text, const C& color, const cinder::ivec2& size,
+               const cinder::vec2& loc) {
+  cinder::gl::color(color);
+
+  auto box = TextBox()
+      .alignment(TextBox::LEFT)
+      .font(cinder::Font(kNormalFont, 30))
+      .size(size)
+      .color(color)
+      .backgroundColor(ColorA(0, 0, 0, 0))
+      .text(text);
+
+  const auto box_size = box.getSize();
+  const cinder::vec2 locp = {loc.x - box_size.x / 2, loc.y - box_size.y / 2};
+  const auto surface = box.render();
+  const auto texture = cinder::gl::Texture::create(surface);
+  cinder::gl::draw(texture, locp);
+}
+
+void StateApp::ReadInput(std::string& state_name) {
+  int state_num = FindStateNum(state_name);
   int starting_state_num = FindStateNum(start_state);
 
   if (state_num != -1 && starting_state_num != -1) {
     if (CheckBordering(starting_state_num, state_num)) {
-      if (StringCompare(statename, end_state)) {
+      if (StringCompare(state_name, end_state)) {
         state_ = GameState::kGameOver;
-        mUserState = "";
+        user_state.clear();
       } else {
-        start_state = statename;
-        mUserState = "";
+        start_state = state_name;
         state_ = GameState::kPlaying;
+        user_state.clear();
       }
     } else {
       state_ = GameState::kInvalidBorder;
-      mUserState = "";
+      user_state.clear();
     }
   } else {
     state_ = GameState::kInvalidState;
-    mUserState = "";
+    user_state.clear();
   }
-
 }
+
 int StateApp::FindStateNum(std::string& state) {
-  // convert string to upper case
   transform(state.begin(), state.end(), state.begin(), ::toupper);
   int state_num;
 
@@ -149,6 +148,7 @@ int StateApp::FindStateNum(std::string& state) {
 
   return state_num;
 }
+
 bool StateApp::CheckBordering(int start_num, int state_num) {
   std::vector<std::string> bordering = json_obj["statesList"].at(start_num)["borders"];
   std::string abbreviation = json_obj["statesList"].at(state_num)["abbreviation"];
@@ -163,7 +163,6 @@ bool StateApp::CheckBordering(int start_num, int state_num) {
 }
 
 bool StateApp::StringCompare(std::string& str1, std::string str2) {
-  //convert s1 and s2 into lower case strings
   transform(str1.begin(), str1.end(), str1.begin(), ::toupper);
   transform(str2.begin(), str2.end(), str2.begin(), ::toupper);
 
@@ -172,17 +171,17 @@ bool StateApp::StringCompare(std::string& str1, std::string str2) {
 
 void StateApp::PrintStates(const std::string& starting, const std::string& ending) {
   PrintText("Current state:", cinder::Color::white(), {500, 50}, {250, 700});
-  PrintText("End state:", cinder::Color::white(), {500, 50}, {900, 700});
   PrintText(starting, cinder::Color::white(), {500, 50}, {250, 750});
+  PrintText("End state:", cinder::Color::white(), {500, 50}, {900, 700});
   PrintText(ending, cinder::Color::white(), {500, 50}, {900, 750});
   PrintText("Your text:", cinder::Color::white(), {500, 50}, {600, 800});
+  //Instructions
   PrintText("Type in the name of a state that borders the current one and press the ENTER key. Try to get to the ending state!", cinder::Color::white(), {875, 50}, {450, 950});
   PrintText("Type 'RESET' or 'START OVER' to begin the game again", cinder::Color::white(), {900, 50}, {463, 1025});
-
 }
 
 void StateApp::PrintUserState() {
-  PrintText(mUserState, cinder::Color::white(), {500, 50}, {600, 850});
+  PrintText(user_state, cinder::Color::white(), {500, 50}, {600, 850});
 }
 
 //trim whitespace from https://www.techiedelight.com/trim-string-cpp-remove-leading-trailing-spaces/
@@ -220,14 +219,12 @@ std::vector<std::string> StateApp::FindStates() {
   int end_number = 10; //hawaii
   srand((unsigned) time(0));
 
-  while (start_number == 1 || start_number == 10 || end_number == 1||end_number== 10 || start_number == end_number) {
-    start_number = rand() % 50;
-    end_number = rand() % 50;
+  while (start_number == 1 || start_number == 10 || end_number == 1||end_number == 10 || start_number == end_number) {
+    start_number = rand() % 50; // NOLINT(cert-msc30-c, cert-msc50-cpp)
+    end_number = rand() % 50; // NOLINT(cert-msc30-c, cert-msc50-cpp)
   }
-  std::string start = json_obj["statesList"].at(start_number)["state"];
-  std::string end = json_obj["statesList"].at(end_number)["state"];
-  states.push_back(start);
-  states.push_back(end);
+  states.push_back(json_obj["statesList"].at(start_number)["state"]);
+  states.push_back(json_obj["statesList"].at(end_number)["state"]);
 
   return states;
 }
