@@ -42,11 +42,14 @@ class StateApp : public cinder::app::App {
   int FindStateNum(std::string& basicString);
   bool CheckBordering(int start_num, int state_num);
   static bool StringCompare(std::string& str1, std::string str2);
-  static void PrintStates(std::string starting, std::string ending);
+  static void PrintStates(const std::string& starting, const std::string& ending);
   void PrintUserState();
   static std::string TrimString(std::string& to_trim);
-  static std::string ltrim(std::string to_trim);
-  static std::string rtrim(std::string to_trim);
+  static std::string ltrim(const std::string& to_trim);
+  static std::string rtrim(const std::string& to_trim);
+  static bool CheckRestart(std::string input);
+  void RestartGame();
+  std::vector<std::string> FindStates();
 };
 
 }  // namespace stateapp

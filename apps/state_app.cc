@@ -7,9 +7,7 @@
 #include <cinder/gl/Texture.h>
 #include <../cmake-build-debug/_deps/nlohmann_json-src/single_include/nlohmann/json.hpp>
 #include <cinder/gl/draw.h>
-#include <cinder/gl/gl.h>
 #include <iostream>
-#include <cinder/Log.h>
 #include <cinder/Color.h>
 #include <algorithm>
 #include <random>
@@ -23,25 +21,16 @@ using cinder::TextBox;
 using cinder::ColorA;
 
 const char kNormalFont[] = "Arial";
+//from https://www.techiedelight.com/trim-string-cpp-remove-leading-trailing-spaces/
 const std::string WHITESPACE = " \n\r\t\f\v";
 
 StateApp::StateApp() {
   std::ifstream file("C:/Users/hpash/cinder_0.9.2_vc2015/my-projects/final-project-hpasham12/resources/state_info.json");
   file >> json_obj;
-  int start_number = 1; //alaska
-  int end_number = 10; //hawaii
-  srand((unsigned) time(0));
 
-  while (start_number == 1 || start_number == 10 || end_number == 1||end_number== 10 || start_number == end_number) {
-
-    start_number = rand() % 50;
-    end_number = rand() % 50;
-  }
-
-  std::string start = json_obj["statesList"].at(start_number)["state"];
-  std::string end = json_obj["statesList"].at(end_number)["state"];
-  start_state = start;
-  end_state = end;
+  std::vector<std::string> initial_states = FindStates();
+  start_state = initial_states.at(0);
+  end_state = initial_states.at(1);
   state_ = GameState::kStartState;
 }
 
@@ -77,7 +66,13 @@ void PrintText(const std::string& text, const C& color, const cinder::ivec2& siz
 void StateApp::update() {
   if (state_ == GameState::kNewStateEntered) {
     mUserState = TrimString(mUserState);
-    ReadInput(mUserState);
+    if (CheckRestart(mUserState)) {
+      RestartGame();
+      state_ = GameState::kPlaying;
+      mUserState = "";
+    } else {
+      ReadInput(mUserState);
+    }
   }
 }
 
@@ -91,13 +86,13 @@ void StateApp::draw() {
     PrintUserState();
   }
   if (state_ == GameState::kInvalidState) {
-    PrintText("that's not a state. try again!", cinder::Color(.75, 0, 0), {500, 50}, {600, 850});
+    PrintText("Yikes! That's not a state. Maybe check you spelling? Try again!", cinder::Color(1, 0.5, 0.5), {400, 50}, {550, 850});
   }
   if (state_ == GameState::kInvalidBorder) {
-    PrintText("that state isn't bordering the current one you're at. try again!", cinder::Color(1, 0, 0), {500, 50}, {600, 850});
+    PrintText("That state isn't bordering the current one you're at. Try again!", cinder::Color(.68, 0.85, 0.9), {400, 50}, {550, 850});
   }
   if (state_ == GameState::kGameOver) {
-    PrintText("WOOHOO YOU WON! NICE JOB!", cinder::Color(0, 0, 1), {500, 50}, {600, 850});
+    PrintText("WOOHOO YOU MADE IT!! NICE JOB!!", cinder::Color(.8, 0.8, 1), {500, 50}, {600, 850});
   }
 }
 
@@ -125,6 +120,7 @@ void StateApp::ReadInput(std::string& statename) {
     if (CheckBordering(starting_state_num, state_num)) {
       if (StringCompare(statename, end_state)) {
         state_ = GameState::kGameOver;
+        mUserState = "";
       } else {
         start_state = statename;
         mUserState = "";
@@ -143,12 +139,12 @@ void StateApp::ReadInput(std::string& statename) {
 int StateApp::FindStateNum(std::string& state) {
   // convert string to upper case
   transform(state.begin(), state.end(), state.begin(), ::toupper);
-  int state_num = -1;
+  int state_num;
 
   try {
     state_num = json_obj[state];
   } catch (...) {
-    return state_num;
+    state_num = -1;
   }
 
   return state_num;
@@ -174,12 +170,15 @@ bool StateApp::StringCompare(std::string& str1, std::string str2) {
   return str1 == str2;
 }
 
-void StateApp::PrintStates(std::string starting, std::string ending) {
-  PrintText("Start state:", cinder::Color::white(), {500, 50}, {250, 700});
+void StateApp::PrintStates(const std::string& starting, const std::string& ending) {
+  PrintText("Current state:", cinder::Color::white(), {500, 50}, {250, 700});
   PrintText("End state:", cinder::Color::white(), {500, 50}, {900, 700});
   PrintText(starting, cinder::Color::white(), {500, 50}, {250, 750});
   PrintText(ending, cinder::Color::white(), {500, 50}, {900, 750});
   PrintText("Your text:", cinder::Color::white(), {500, 50}, {600, 800});
+  PrintText("Type in the name of a state that borders the current one and press the ENTER key. Try to get to the ending state!", cinder::Color::white(), {875, 50}, {450, 950});
+  PrintText("Type 'RESET' or 'START OVER' to begin the game again", cinder::Color::white(), {900, 50}, {463, 1025});
+
 }
 
 void StateApp::PrintUserState() {
@@ -192,17 +191,45 @@ std::string StateApp::TrimString(std::string& to_trim) {
 }
 
 //trim whitespace from https://www.techiedelight.com/trim-string-cpp-remove-leading-trailing-spaces/
-std::string StateApp::ltrim(std::string to_trim) {
+std::string StateApp::ltrim(const std::string& to_trim) {
   size_t start = to_trim.find_first_not_of(WHITESPACE);
 
   return (start == std::string::npos) ? "" : to_trim.substr(start);
 }
 
 //trim whitespace from https://www.techiedelight.com/trim-string-cpp-remove-leading-trailing-spaces/
-std::string StateApp::rtrim(std::string to_trim) {
+std::string StateApp::rtrim(const std::string& to_trim) {
   size_t end = to_trim.find_last_not_of(WHITESPACE);
 
   return (end == std::string::npos) ? "" : to_trim.substr(0, end + 1);
+}
+
+bool StateApp::CheckRestart(std::string input) {
+  return StringCompare(input, "reset") || StringCompare(input, "start over");
+}
+
+void StateApp::RestartGame() {
+  std::vector<std::string> initial_states = FindStates();
+  start_state = initial_states.at(0);
+  end_state = initial_states.at(1);
+}
+
+std::vector<std::string> StateApp::FindStates() {
+  std::vector<std::string> states;
+  int start_number = 1; //alaska
+  int end_number = 10; //hawaii
+  srand((unsigned) time(0));
+
+  while (start_number == 1 || start_number == 10 || end_number == 1||end_number== 10 || start_number == end_number) {
+    start_number = rand() % 50;
+    end_number = rand() % 50;
+  }
+  std::string start = json_obj["statesList"].at(start_number)["state"];
+  std::string end = json_obj["statesList"].at(end_number)["state"];
+  states.push_back(start);
+  states.push_back(end);
+
+  return states;
 }
 
 }  // namespace stateapp
