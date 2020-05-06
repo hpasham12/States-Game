@@ -37,3 +37,9 @@ Development
    - Fixed bugs
      - Checked to see if string was empty before executing backspace function
      - Trimmed leading and trailing whitespace from user input
+
+- **5/6/20** 
+   - Added unique colors to the text to make it look pretty
+   - Added game reset functionality
+   - Included instructions in game window
+   - Updated README.md file
