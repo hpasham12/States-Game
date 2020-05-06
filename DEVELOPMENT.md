@@ -24,3 +24,16 @@ Development
      - Functional on its on without user input
    - Created helper functions to read input
      - Future: User input & show start/ending states in console or window
+     
+- **5/4/20** 
+   - Updated JSON file for easier access to state index numbers
+   - Figured out how to display text on screen
+   - Connected user input to game logic
+   - Added PROPOSAL.md file
+   - Test cases for helper methods
+   
+- **5/5/20** 
+   - Updated DEVELOPMENT.md file
+   - Fixed bugs
+     - Checked to see if string was empty before executing backspace function
+     - Trimmed leading and trailing whitespace from user input
