@@ -66,7 +66,7 @@ void StateApp::draw() {
     PrintUserState();
   }
   if (state_ == GameState::kInvalidState) {
-    PrintText("Yikes! That's not a state. Maybe check you spelling? Try again!", cinder::Color(1, 0.5, 0.5), {400, 50}, {550, 850});
+    PrintText("Yikes! That's not a state. Maybe check your spelling? Try again!", cinder::Color(1, 0.5, 0.5), {400, 50}, {550, 850});
   }
   if (state_ == GameState::kInvalidBorder) {
     PrintText("That state isn't bordering the current one you're at. Try again!", cinder::Color(.68, 0.85, 0.9), {400, 50}, {550, 850});
